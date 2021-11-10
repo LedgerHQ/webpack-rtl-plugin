@@ -28,7 +28,7 @@ class WebpackRTLPlugin {
           for (let asset of chunk.files) {
             const match = this.options.test ? new RegExp(this.options.test).test(asset) : true
 
-            if (path.extname(asset) !== '.css') {
+            if (!asset.includes('.css')) {
               continue;
             }
 
